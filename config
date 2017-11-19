@@ -8,6 +8,8 @@ set $mod Mod4
 font pango:Source Code Pro 8
 
 
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -19,7 +21,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -terminal lilyterm -show run 
 
 # start chrome
-bindsym $mod+g exec google-chrome
+bindsym $mod+g exec firefox
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -63,7 +65,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # i3lock
-bindsym $mod+l exec i3lock
+bindsym $mod+l exec /home/david/.config/i3/i3lock.sh
 
 # switch to workspace
 bindsym $mod+1 workspace 1: 
@@ -98,7 +100,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Borders
 hide_edge_borders both
+for_window [class='^.*'] border pixel 5 
 for_window [class="^Chrome$" title=" -Google$"] border none
+for_window [class="^Chrome$" title=" -Google$"] 1pixel
 
 # i3bar
 bar {
@@ -118,8 +122,9 @@ bar {
 }
 
 bindsym $mod+e exec Thunar
-exec xbindkeys
-exec xcompmgr -c -f -n
+#exec xbindkeys
+#exec xcompmgr -c -f -n
 exec redshift-gtk
-exec disk-indicator -c /home/david/.disk-indicator
-exec --no-startup-id nitrogen --restore
+exec ckb -b
+#exec disk-indicator -c /home/david/.disk-indicator
+exec --no-startup-id nitrogen --set-centered Downloads/cyber_1.jpg

@@ -31,13 +31,14 @@ set ignorecase		" Do case insensitive matching
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
-set number
+"set number
 "set cursorline
 set hlsearch		" highlight matches
 set incsearch		" search as characters entered
 set tabstop=4		" visual space for tab
 set softtabstop=4	" number of spaced in tab
 set expandtab		" tabs are spaces
+set shiftwidth=4    " uses four spaces when using >>
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local

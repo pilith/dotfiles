@@ -10,14 +10,15 @@ status.register("clock",
     on_leftclick = ['scroll_format', 1],)
 
 # Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    hints = {"markup": "pango"},
-    format="<span color=\"#8c16da\">{temp:.0f}</span>",
-    alert_temp = 70,
-    alert_color = "#FF0000",)
+#status.register("temp",
+#    hints = {"markup": "pango"},
+#    format="<span color=\"#8c16da\">{temp:.0f}</span>",
+#    alert_temp = 70,
+#    alert_color = "#FF0000",)
+
 
 status.register("network",
-    interface="enp0s31f6",
+    interface="enp10s0",
     format_up="  {kbs}KB/s",
     )
 
@@ -41,10 +42,10 @@ status.register("pulseaudio",
     format="♪{volume}",)
 
 # Apt-Get update count
-status.register("updates", 
-    format = "Updates:{count}",
-    format_no_updates = "Up to Date",
-    backends = [aptget.AptGet()])
+#status.register("updates", 
+#    format = "Updates:{count}",
+#    format_no_updates = "Up to Date",
+#    backends = [aptget.AptGet()])
 
 
 status.run()
