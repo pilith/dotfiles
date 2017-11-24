@@ -22,6 +22,14 @@ status.register("network",
     format_up="  {kbs}KB/s",
     )
 
+status.register("openvpn",
+    vpn_name="openvpn-client@tunnelUS.service",
+    status_command='bash -c "systemctl status openvpn-client@tunnelUS.service | grep running"',
+    format="TunnelBear:{status}",
+    status_down="",
+    status_up="",
+    )
+
 # Disks 
 status.register("disk",
     hints = {"markup": "pango"},
